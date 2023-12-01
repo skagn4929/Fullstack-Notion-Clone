@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import {
   ChevronsLeft,
   MenuIcon,
@@ -10,12 +9,13 @@ import {
   Settings,
   Trash,
 } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { UserItem } from "./user-item";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
+
+import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
 import {
   Popover,
@@ -24,15 +24,20 @@ import {
 } from "@/components/ui/popover";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
+
+import { UserItem } from "./user-item";
 import { Item } from "./item";
 import { DocumentList } from "./document-list";
 import { TrashBox } from "./trash-box";
+import { Navbar } from "./navbar";
 
 export const Navigation = () => {
+  const router = useRouter();
   const settings = useSettings();
   const search = useSearch();
+  const params = useParams();
   const pathname = usePathname();
-  const isMobile = useMediaQuery("(max-width: 768px");
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
 
   const isResizingRef = useRef(false);
@@ -99,6 +104,7 @@ export const Navigation = () => {
         "width",
         isMobile ? "0" : "calc(100% - 240px)"
       );
+      navbarRef.current.style.setProperty("left", isMobile ? "100%" : "240px");
       setTimeout(() => setIsResetting(false), 300);
     }
   };
@@ -116,12 +122,14 @@ export const Navigation = () => {
   };
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" });
+    const promise = create({ title: "Untitled" }).then((documentId) =>
+      router.push(`/documents/${documentId}`)
+    );
 
     toast.promise(promise, {
       loading: "Creating a new note...",
       success: "New note created!",
-      error: "Failed to create a new note",
+      error: "Failed to create a new note.",
     });
   };
 
@@ -180,15 +188,19 @@ export const Navigation = () => {
           isMobile && "left-0 w-full"
         )}
       >
-        <nav className="bg-transparent px-3 py-2 w-full">
-          {isCollapsed && (
-            <MenuIcon
-              onClick={resetWidth}
-              role="button"
-              className="h-6 w-6 text-muted-foreground"
-            />
-          )}
-        </nav>
+        {!!params.documentId ? (
+          <Navbar isCollapsed={isCollapsed} onResetWidth={resetWidth} />
+        ) : (
+          <nav className="bg-transparent px-3 py-2 w-full">
+            {isCollapsed && (
+              <MenuIcon
+                onClick={resetWidth}
+                role="button"
+                className="h-6 w-6 text-muted-foreground"
+              />
+            )}
+          </nav>
+        )}
       </div>
     </>
   );
