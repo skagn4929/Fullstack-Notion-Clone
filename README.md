@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fullstack Notion Clone
+- [Notion Clone](https://fullstack-notion-clone-7i2bf72qp-ki-namhoos-projects.vercel.app/)
 
-## Getting Started
+이 프로젝트는 [Notion](www.notion.so)의 핵심 기능을 클론 코딩하여 만든 웹 어플리케이션입니다.
 
-First, run the development server:
+## 주요 기능
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### 실시간 데이터베이스
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+이 프로젝트는 실시간 데이터베이스를 기반으로 하여 여러 사용자가 동시에 문서를 편집할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 노션 스타일 에디터
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Notion과 유사한 스타일의 에디터를 제공하여 다양한 형식의 문서를 작성하고 편집할 수 있습니다.
 
-## Learn More
+- 라이트 모드와 다크 모드
 
-To learn more about Next.js, take a look at the following resources:
+사용자의 환경에 맞게 라이트 모드와 다크 모드를 지원합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 무제한 자식 문서
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+사용자는 각 문서에 무제한으로 자식 문서를 생성할 수 있습니다.
 
-## Deploy on Vercel
+- 휴지통 기능
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+삭제한 문서 및 파일은 휴지통으로 이동하고, 영구 삭제 또는 복구할 수 있습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 인증 기능
+
+계정을 생성하고 로그인하여 개인 문서를 안전하게 유지 할 수 있습니다.
+
+- 파일 업로드, 삭제, 교체
+
+사용자는 문서에 파일을 업로드하고 삭제하며, 필요 시 파일을 교체할 수 있습니다.
+
+- 각 문서에 대한 아이콘(실시간 변경)
+
+사용자가 선택한 아이콘은 실시간으로 변경되며, 문서를 빠르게 식별할 수 있습니다.
+
+- 확장 가능한 사이드바
+
+확장 가능한 사이드바를 제공하여 사용자가 필요한 기능에 빠르게 접근할 수 있습니다.
+
+- 완전히 접을 수 있는 사이드바
+
+사이드바는 완전히 접을 수 있어 사용자가 더 많은 공간을 활용할 수 있습니다.
+
+- 완전한 모바일 반응성
+
+모바일에서 완전히 작동하며, 사용자는 어디서든 문서를 작성하고 편집할 수 있습니다.
+
+- 문서를 웹에 게시
+
+특정 문서를 웹에 게시하여 외부 사용자와 공유할 수 있습니다.
+
+- 각 문서의 커버 이미지
+
+사용자는 각 문서에 대한 커버 이미지를 지정하여 시각적으로 구분할 수 있습니다.
+
+## 기술 스택
+- Next.js 13
+- React
+- TypeScript
+- Convex
+- Tailwind
+
+## 참고
+[Video Tutorial](https://www.youtube.com/watch?v=0OaDyjB9Ib8&t=24732s)
