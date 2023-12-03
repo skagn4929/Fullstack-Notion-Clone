@@ -67,7 +67,7 @@ Notion과 유사한 스타일의 에디터를 제공하여 다양한 형식의 �
 [게시.webm](https://github.com/skagn4929/Fullstack-Notion-Clone/assets/134206709/bb25f32e-65cb-46f0-a6e2-17141d1983f1)
 
 ## 기술 스택
-[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1701600045282?alt=media&token=29996a94-f007-44e9-9f35-2811abddfc2e)](https://github.com/msdio/stackticon)
+[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1701600308318?alt=media&token=de0d19fc-c34b-4fab-a3dd-a59ddac828f0)](https://github.com/msdio/stackticon)
 
 ## 참고
 [Video Tutorial](https://www.youtube.com/watch?v=0OaDyjB9Ib8&t=24732s)
